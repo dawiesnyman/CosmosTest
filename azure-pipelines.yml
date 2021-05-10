@@ -7,7 +7,11 @@ trigger:
 - master
 
 pool:
-  pool: 'Default'
+  name: Default
+  demands:
+  - msbuild
+  - visualstudio
+  - vstest
 
 variables:
   solution: '**/*.sln'
