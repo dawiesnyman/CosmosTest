@@ -29,6 +29,18 @@ steps:
   inputs:
     restoreSolution: '$(Parameters.solution)'
 
+- task: DotNetCoreCLI@2
+  displayName: dotnet restore
+  inputs:
+    command: restore
+    projects: '**/**/*.csproj'
+#    feedsToUse: 'select'
+#    vstsFeed: '<projectName>/<feedName>'
+#    includeNuGetOrg: true
+- task: DotNetCoreCLI@2
+  displayName: restore directory
+  inputs:
+    restoreDirectory:
 - task: VSBuild@1
   inputs:
     solution: '$(solution)'
