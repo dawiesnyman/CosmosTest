@@ -37,10 +37,7 @@ steps:
 #    feedsToUse: 'select'
 #    vstsFeed: '<projectName>/<feedName>'
 #    includeNuGetOrg: true
-- task: DotNetCoreCLI@2
-  displayName: restore directory
-  inputs:
-    restoreDirectory:
+
 - task: VSBuild@1
   inputs:
     solution: '$(solution)'
